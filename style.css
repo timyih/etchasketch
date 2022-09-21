@@ -16,3 +16,7 @@
     flex: 1 0 auto;
     aspect-ratio: auto 1 / 1;
 }
+
+div.colored {
+    background-color: blue;
+}
