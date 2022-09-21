@@ -13,11 +13,6 @@ function createGrid(gridSize) {
     }
 }
 
-createGrid(30);
-
-var cells = document.querySelectorAll('div.cell');
-cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
-
 function reset() {
     var size = prompt("Enter a number for the size of grid", 16);
 
@@ -25,6 +20,8 @@ function reset() {
         const container = document.querySelector('div.container');
         removeAllChildren(container);
         createGrid(size);
+        var cells = document.querySelectorAll('div.cell');
+        cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
     }
 }
 
@@ -33,6 +30,14 @@ function removeAllChildren(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+createGrid(30);
+
+var cells = document.querySelectorAll('div.cell');
+cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
+
+
+
 // const resetButton = document.querySelector('button.reset');
 // resetButton.addEventListener('onclick', function () {
 //     var size = prompt("Enter a number for the size of grid", 16);
