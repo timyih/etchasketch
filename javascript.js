@@ -46,6 +46,7 @@ function pen() {
 }
 
 createGrid(30);
+pen();
 
 
 
