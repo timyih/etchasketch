@@ -20,8 +20,7 @@ function resize() {
         const container = document.querySelector('div.container');
         removeAllChildren(container);
         createGrid(size);
-        var cells = document.querySelectorAll('div.cell');
-        cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
+        pen();
     }
 }
 
@@ -43,7 +42,7 @@ function eraser() {
 
 function pen() {
     var cells = document.querySelectorAll('div.cell');
-    cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
+    cells.forEach(cell => cell.addEventListener('mousedown', function () { cell.classList.add('colored') }));
 }
 
 createGrid(30);
