@@ -37,12 +37,12 @@ function removeAllChildren(parent) {
 
 function eraser() {
     var cells = document.querySelectorAll('div.cell');
-    cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.remove('colored') }));
+    cells.forEach(cell => cell.addEventListener('mouseover', function (e) { if (e.buttons == 1) {cell.classList.remove('colored')}}));
 }
 
 function pen() {
     var cells = document.querySelectorAll('div.cell');
-    cells.forEach(cell => cell.addEventListener('mousedown', function () { cell.classList.add('colored') }));
+    cells.forEach(cell => cell.addEventListener('mouseover', function (e) { if (e.buttons == 1) {cell.classList.add('colored')}}));
 }
 
 createGrid(30);
