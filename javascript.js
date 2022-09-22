@@ -13,7 +13,7 @@ function createGrid(gridSize) {
     }
 }
 
-function reset() {
+function resize() {
     var size = prompt("Enter a number for the size of grid", 16);
 
     if (!isNaN(size) && size <= 100) {
@@ -25,16 +25,28 @@ function reset() {
     }
 }
 
+function reset() {
+    var cells = document.querySelectorAll('div.colored');
+    cells.forEach(cell => cell.classList.remove('colored'));
+}
+
 function removeAllChildren(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
 
-createGrid(30);
+function eraser() {
+    var cells = document.querySelectorAll('div.cell');
+    cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.remove('colored') }));
+}
 
-var cells = document.querySelectorAll('div.cell');
-cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
+function pen() {
+    var cells = document.querySelectorAll('div.cell');
+    cells.forEach(cell => cell.addEventListener('mouseover', function () { cell.classList.add('colored') }));
+}
+
+createGrid(30);
 
 
 
